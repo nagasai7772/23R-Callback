@@ -1,100 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- <script src="./callback.js"></script> -->
-     <style>
-        img{
-            height: 500px;
-            width: 500px;
-            border: 2px solid red;
-            
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
         }
-        h1
-        {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        h1 {
+            text-align: center;
+            color: #4caf50;
+            margin: 20px 0;
+            font-size: 2rem;
         }
-     </style>
-  </head>
-  <body>
-    <center>
-    <img  id="img"
-      src="https://nextgalleriamalls.com/nextmusarambagh/wp-content/uploads/2024/02/pizzahut.png"
-      )
-      alt=""
-    />
-    <h1 id="myH1"></h1>
-</center>
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        img {
+            height: 300px;
+            width: 300px;
+            border: 5px solid #4caf50;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .caption {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="img" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366/RX_THUMBNAIL/IMAGES/VENDOR/2024/7/16/0a67d5f1-29e9-42b5-ab45-5776cf5f5b38_11094.jpg">
+        <div id="myH1" class="caption">Welcome to Pizza Order Tracker!</div>
+    </div>
+
+    <footer>&copy; 2024 Pizza Tracker. All rights reserved.</footer>
+
     <script>
-         
-         let image=document.getElementById("img");
-         let Caption=document.getElementById("myH1")
+        let image = document.getElementById("img");
+        let Caption = document.getElementById("myH1");
 
-         function Order(pizza)
-         {
+        function Order(pizza) {
             setTimeout(() => {
-                
-                image.setAttribute("src","https://cdni.iconscout.com/illustration/premium/thumb/order-confirmed-illustration-download-in-svg-png-gif-file-formats--confirm-online-booking-shopping-pack-e-commerce-illustrations-6110040.png?f=webp")
+                image.setAttribute("src", "https://www.shutterstock.com/image-photo/hand-serves-pizza-via-smartphone-260nw-1834419385.jpg");
+                Caption.innerHTML = "Order Placed 📦";
                 pizza();
-                Caption.innerHTML="Orderplaced 📦"
             }, 5000);
+        }
 
-         }
-         function Prepare(pizza)
-         {
+        function Prepare(pizza) {
             setTimeout(() => {
-                
-                image.setAttribute("src","https://media.istockphoto.com/id/530578186/photo/preparing-pizza-margherita-cooks-hands.jpg?s=612x612&w=0&k=20&c=xk6Ygb6mkcCpczIfL1fH-tjKQueyWis7g1eVdNHAvTQ=")
+                image.setAttribute("src", "https://media.istockphoto.com/id/1291299956/photo/bakery-chef-prepare-pizza.jpg?s=612x612&w=0&k=20&c=9lusK08cwjyD3Bs4FjALUSFmCsy5OQmIJnAT-irnu6U=");
+                Caption.textContent = "Preparing Pizza 🙌🔥";
                 pizza();
-                Caption.textContent="Preparing Pizza 🙌🔥"
             }, 3000);
+        }
 
-         }function Bake(pizza)
-         {
+        function Bake(pizza) {
             setTimeout(() => {
-                
-                image.setAttribute("src","https://cdn-amcea.nitrocdn.com/ulEzuBrYXwVrvqtWXmcnehmswZBcyfBY/assets/images/optimized/rev-cd6fb0f/pizzaware.com/wp-content/uploads/2023/05/o2.jpg")
+                image.setAttribute("src", "https://img.freepik.com/premium-photo/flames-inside-industrial-pizza-oven-with-pizzas-cooking_1272857-81612.jpg");
+                Caption.textContent = "Baking Pizza 🔥🔥";
                 pizza();
-                Caption.textContent="Baking Pizza 🔥🔥"
             }, 3000);
+        }
 
-         }function pack(pizza)
-         {
+        function Pack(pizza) {
             setTimeout(() => {
-                
-                image.setAttribute("src","https://www.advoice.co.in/wp-content/uploads/Pizza-Box-Design-Ideas-900x506.jpg")
+                image.setAttribute("src", "https://packagingbee.co.uk/wp-content/uploads/2023/08/types-of-pizza-boxes.webp");
+                Caption.textContent = "Packing Pizza 👜";
                 pizza();
-                Caption.textContent="Packing pizza 👜"
             }, 2000);
+        }
 
-         }
-         function Deliver(pizza)
-         {
+        function Deliver() {
             setTimeout(() => {
-                
-                image.setAttribute("src","https://www.akcrust.com/hubfs/Blog_Images/Pizza%20Delivery.jpg")
-                
-                Caption.textContent="Delivered Happily 🎁😍"
+                image.setAttribute("src", "https://png.pngtree.com/png-vector/20241020/ourlarge/pngtree-cartoon-pizza-delivery-man-in-red-uniform-png-image_14132198.png");
+                Caption.textContent = "Delivered Happily 🎁😍";
             }, 6000);
+        }
 
-         }
-         Order(()=>
-        {
-            Prepare(()=>
-        {
-            Bake(()=>{
-                pack(()=>
-            {
-                Deliver()
-        
-            })
-            })
-        })
-        })
-
-         
+        Order(() => {
+            Prepare(() => {
+                Bake(() => {
+                    Pack(() => {
+                        Deliver();
+                    });
+                });
+            });
+        });
     </script>
-  </body>
+</body>
 </html>
