@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="./callback.js"></script> -->
+     <style>
+        img{
+            height: 500px;
+            width: 500px;
+            border: 2px solid red;
+            
+        }
+        h1
+        {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+     </style>
+  </head>
+  <body>
+    <center>
+    <img  id="img"
+      src="https://nextgalleriamalls.com/nextmusarambagh/wp-content/uploads/2024/02/pizzahut.png"
+      )
+      alt=""
+    />
+    <h1 id="myH1"></h1>
+</center>
+    <script>
+         
+         let image=document.getElementById("img");
+         let Caption=document.getElementById("myH1")
+
+         function Order(pizza)
+         {
+            setTimeout(() => {
+                
+                image.setAttribute("src","https://cdni.iconscout.com/illustration/premium/thumb/order-confirmed-illustration-download-in-svg-png-gif-file-formats--confirm-online-booking-shopping-pack-e-commerce-illustrations-6110040.png?f=webp")
+                pizza();
+                Caption.innerHTML="Orderplaced 📦"
+            }, 5000);
+
+         }
+         function Prepare(pizza)
+         {
+            setTimeout(() => {
+                
+                image.setAttribute("src","https://media.istockphoto.com/id/530578186/photo/preparing-pizza-margherita-cooks-hands.jpg?s=612x612&w=0&k=20&c=xk6Ygb6mkcCpczIfL1fH-tjKQueyWis7g1eVdNHAvTQ=")
+                pizza();
+                Caption.textContent="Preparing Pizza 🙌🔥"
+            }, 3000);
+
+         }function Bake(pizza)
+         {
+            setTimeout(() => {
+                
+                image.setAttribute("src","https://cdn-amcea.nitrocdn.com/ulEzuBrYXwVrvqtWXmcnehmswZBcyfBY/assets/images/optimized/rev-cd6fb0f/pizzaware.com/wp-content/uploads/2023/05/o2.jpg")
+                pizza();
+                Caption.textContent="Baking Pizza 🔥🔥"
+            }, 3000);
+
+         }function pack(pizza)
+         {
+            setTimeout(() => {
+                
+                image.setAttribute("src","https://www.advoice.co.in/wp-content/uploads/Pizza-Box-Design-Ideas-900x506.jpg")
+                pizza();
+                Caption.textContent="Packing pizza 👜"
+            }, 2000);
+
+         }
+         function Deliver(pizza)
+         {
+            setTimeout(() => {
+                
+                image.setAttribute("src","https://www.akcrust.com/hubfs/Blog_Images/Pizza%20Delivery.jpg")
+                
+                Caption.textContent="Delivered Happily 🎁😍"
+            }, 6000);
+
+         }
+         Order(()=>
+        {
+            Prepare(()=>
+        {
+            Bake(()=>{
+                pack(()=>
+            {
+                Deliver()
+        
+            })
+            })
+        })
+        })
+
+         
+    </script>
+  </body>
+</html>
